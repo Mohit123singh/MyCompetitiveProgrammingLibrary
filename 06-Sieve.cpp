@@ -89,6 +89,7 @@ void sieve()
 void solve()
 {
     sieve();
+
     rr;
 }
 
