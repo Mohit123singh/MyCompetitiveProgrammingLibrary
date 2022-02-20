@@ -119,6 +119,8 @@ Practice Problems:
 
 https://www.spoj.com/problems/PRIME1/
 
+
+
 */
 
 void solve()
