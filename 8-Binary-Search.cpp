@@ -1,3 +1,4 @@
+
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -18,9 +19,6 @@ using namespace std;
 #define foo(i, n) for (type i = 1; i <= n; i++)
 #define mi(x) map<type1, type2> x
 #define mii(x) unordered_map<type1, type2> x
-#define sta stack<type>
-#define q1 queue<type>
-#define stt unordered_set<type>
 #define maxheap priority_queue<type>
 #define minheap priority_queue<type, vi, greater<type>>
 #define setbits(x) __builtin_popcountll(x)
@@ -61,83 +59,116 @@ struct custom_hash
     }
 };
 
-const int N = 1e6 + 100;
-vi primes;
-vector<bool> isPrime(N, true);
-
-void sieve()
+int power(int x, int y, int m = mod)
 {
-    isPrime[0] = isPrime[1] = false;
-    for (int i = 2; i * i <= N; i++)
+    int res = 1;
+    while (y > 0)
     {
-        if (isPrime[i])
-        {
-            for (int j = i * i; j <= N; j += i)
-                isPrime[j] = false;
-        }
+        if (y & 1)
+            res = (res * x) % m;
+        x = (x * x) % m;
+        y = y >> 1;
     }
-    for (int i = 2; i <= N; i++)
-    {
-        if (isPrime[i])
-            primes.pb(i);
-    }
+    return res;
 }
 
-void generate_primes_in_range(int l, int r)
+int find_lower_bound(vi &a, int n, int x)
 {
-    if (l == 1)
-        l++;
-    int n = r - l + 1;
-    vi primes_in_range(n, 0);
-    for (auto it : primes)
+    int l = 0;
+    int h = n - 1;
+    while (h - l > 1)
     {
-        if (it * it <= r)
-        {
-            int x = (l / it) * it;
+        int mid = l + (h - l) / 2;
 
-            if (x < l)
-                x += it;
-
-            for (; x <= r; x += it)
-            {
-                if (x != it)
-                    primes_in_range[x - l] = 1;
-            }
-        }
+        if (a[mid] < x)
+            l = mid + 1;
         else
-            br;
+            h = mid;
     }
-    for (int i = 0; i < n; i++)
-    {
-        if (primes_in_range[i] == 0)
-            cout << l + i << " ";
-    }
+    if (a[l] >= x)
+        rr l;
+    else if (a[h] >= x)
+        rr h;
+    rr - 1;
 }
 
-/*
-Practice Problems:
+int find_upper_bound(vi &a, int n, int x)
+{
+    int l = 0;
+    int h = n - 1;
+    while (h - l > 1)
+    {
+        int mid = l + (h - l) / 2;
 
-https://www.spoj.com/problems/PRIME1/
-
-*/
+        if (a[mid] <= x)
+            l = mid + 1;
+        else
+            h = mid;
+    }
+    if (a[l] > x)
+        rr l;
+    else if (a[h] > x)
+        rr h;
+    rr - 1;
+}
 
 void solve()
 {
-    int l, r;
-    cin >> l >> r;
-    generate_primes_in_range(l, r);
+    int n;
+    cin >> n;
+    vi a(n);
+    fo(i, n) cin >> a[i];
+    sort(I(a));
+    int q;
+    cin >> q;
+    foo(i, q)
+    {
+        int t;
+        cin >> t;
+        //lower_bound:
+        if (t == 1)
+        {
+            int x;
+            cin >> x;
+
+            int index = find_lower_bound(a, n, x);
+
+            cout << index << endl;
+        }
+        //upper_bound:
+        else
+        {
+            int x;
+            cin >> x;
+            int index = find_upper_bound(a, n, x);
+
+            cout << index << endl;
+        }
+    }
+
     rr;
 }
 
+/*
+    Practice-Problems:
+
+    https://www.spoj.com/problems/AGGRCOW/
+
+    https://www.spoj.com/problems/NOTATRI/
+
+    https://codeforces.com/problemset/problem/448/D/
+
+    
+
+*/
+
 int32_t main()
 {
-
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
 
     //test(t)
-    sieve();
     solve();
 
     return 0;
