@@ -121,6 +121,8 @@ https://www.spoj.com/problems/PRIME1/
 
 
 
+
+
 */
 
 void solve()
