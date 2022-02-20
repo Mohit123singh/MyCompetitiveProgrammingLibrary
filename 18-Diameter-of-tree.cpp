@@ -61,43 +61,23 @@ struct custom_hash
     }
 };
 
-const int N = 1e6;
+const int N = 1e5 + 100;
 vi adj[N];
 vector<bool> visted(N, false);
-vi disc(N, 0);
-vi low(N, 0);
-int timer;
-mii(x);
-
-void dfs(int node, int par = -1)
+int max_node, max_d;
+void dfs(int node, int d)
 {
     visted[node] = true;
-    low[node] = disc[node] = timer;
-    timer++;
-    int children = 0;
-
+    if (d > max_d)
+    {
+        max_d = d;
+        max_node = node;
+    }
     for (auto child : adj[node])
     {
-        if (child == par)
-            ct;
-        if (visted[child])
-        {
-
-            low[node] = min(low[node], disc[child]);
-        }
-        else
-        {
-            dfs(child, node);
-
-            if (low[child] >= disc[node] && par != -1)
-                x[node]++;
-
-            low[node] = min(low[node], low[child]);
-            children++;
-        }
+        if (!visted[child])
+            dfs(child, d + 1);
     }
-    if (par == -1 && children > 1)
-        x[node]++;
 }
 
 void solve()
@@ -108,7 +88,6 @@ void solve()
     {
         adj[i].clear();
         visted[i] = false;
-        low[i] = disc[i] = 0;
     }
     foo(i, m)
     {
@@ -117,24 +96,24 @@ void solve()
         adj[x].pb(y);
         adj[y].pb(x);
     }
-    vi cut;
-    int p = -1;
+    max_d = -1;
+    dfs(1, 0);
+
+    max_d = -1;
+
     foo(i, n)
-    {
-        if (!visted[i])
-            dfs(i, -1);
-    }
-    cout << x.sz() << endl;
-    for (auto it : x)
-        cout << it.ff << endl;
+        visted[i] = false;
+
+    dfs(max_node, 0);
+
+    cout << max_d << endl;
+
+    rr;
 }
 
-/*
+/* Practice Problems:
 
-Practice-Problem:
-
-https://www.spoj.com/problems/SUBMERGE/
-
+    https://codeforces.com/gym/102694/problem/A
 */
 
 int32_t main()
