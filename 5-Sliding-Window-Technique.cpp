@@ -61,26 +61,33 @@ struct custom_hash
     }
 };
 
-// kadane's algo:
-// Maximum sum in all sub-array of given array;
+// Sliding-Window-Technique::
+
+// find the maximum-sum of k-consecutive elements::
 
 void solve()
 {
 
-    int n;
-    cin >> n;
+    int n, k;
+    cin >> n >> k;
     vi a(n);
     fo(i, n) cin >> a[i];
 
-    int sum = 0;
-    int ans = -inf;
+    // first we find the sum of first k elements:
 
-    for (auto it : a)
+    int sum = 0;
+    fo(i, k)
+        sum += a[i];
+    int ans = sum;
+
+    // then we find the sum of rest k -windows of the array  and update the maximum sum
+    // of all k-windows:
+
+    for (int i = k; i < n; i++)
     {
-        sum += it;
+        sum += a[i];
+        sum -= a[i - k];
         ans = max(ans, sum);
-        if (sum < 0)
-            sum = 0;
     }
     cout << ans << endl;
 
@@ -88,14 +95,17 @@ void solve()
 }
 
 /*
-    Practice Problems:
-    
-    https://codeforces.com/problemset/problem/327/A
+    Practice-Problems:
 
-    https://codeforces.com/problemset/problem/1285/B
+    https://codeforces.com/problemset/problem/363/B
+
+    https://codeforces.com/problemset/problem/279/B
+
+    https://codeforces.com/contest/1341/problem/B
+
+
 
 */
-
 int32_t main()
 {
 
