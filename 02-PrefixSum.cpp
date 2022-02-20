@@ -83,7 +83,7 @@ void solve()
         if (l)
             ans -= prefix[l - 1];
         cout << ans << endl;
-    }
+        }
 
     rr;
 }
