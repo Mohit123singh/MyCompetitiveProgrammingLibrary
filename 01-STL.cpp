@@ -68,8 +68,6 @@ void binary_search_stl_function()
 {
     int a[] = {1, 4, 5, 8, 9};
 
-    
-
     //if x exits in array or not.....
 
     bool res = binary_search(a, a + n, 3); //false;
