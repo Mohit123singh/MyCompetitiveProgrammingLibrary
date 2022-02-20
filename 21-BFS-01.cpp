@@ -96,7 +96,7 @@ void solve()
     cin >> n >> m;
     fo(i, n)
     {
-        visted[i] = false;
+
         adj[i].clear();
         dist[i] = inf;
     }
@@ -109,10 +109,16 @@ void solve()
     }
     bfs_01();
     fo(i, n)
-            cout
-        << dist[i] << " ";
-    rr;
+    {
+        cout << dist[i] << " ";
+    }
 }
+
+/*
+    Practice-Problems:
+    
+    https://www.codechef.com/problems/REVERSE
+*/
 
 int32_t main()
 {
