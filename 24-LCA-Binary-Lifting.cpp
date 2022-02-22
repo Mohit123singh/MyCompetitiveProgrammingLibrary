@@ -123,9 +123,9 @@ void pre(int n)
 
     dfs(1);
 
-    for (int node = 1; node <= n; node++)
+    for (int i = 1; i <= 20; i++)
     {
-        for (int i = 1; i <= 20; i++)
+        for (int node = 1; node <= n; node++)
         {
             int p = dp[node][i - 1];
 
@@ -160,7 +160,6 @@ void solve()
 
     rr;
 }
-
 /*
     Practice Problems:
 
