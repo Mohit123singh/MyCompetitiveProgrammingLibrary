@@ -112,6 +112,20 @@ int find_LCA(int a, int b)
     }
     rr dp[a][0];
 }
+// finding kth ancestor:
+int find(int node, int k)
+{
+    for (int i = 20; i >= 0; i--)
+    {
+        int j = (1 << i);
+        if (j <= k)
+        {
+            node = dp[node][j];
+            k -= j;
+        }
+    }
+    rr node;
+}
 void pre(int n)
 {
 
