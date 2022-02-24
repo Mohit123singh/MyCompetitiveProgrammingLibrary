@@ -138,6 +138,24 @@ void solve()
     Solution:
     https://codeforces.com/contest/1534/submission/147488449
 
+
+    https://codeforces.com/contest/1332/problem/C
+
+    Solution:
+
+    https://codeforces.com/contest/1332/submission/147564611
+
+
+    https://codeforces.com/contest/1263/problem/D
+
+     Solution:
+
+     https://codeforces.com/contest/1263/submission/147578249
+
+     
+
+
+
     
 
 
