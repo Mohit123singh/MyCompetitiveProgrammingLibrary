@@ -1,5 +1,4 @@
 
-
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -72,27 +71,19 @@ int power(int x, int y, int m = mod)
     }
     return res;
 }
-
-void bubble_sort(vi &a, int n)
+void selection_sort(vi &a, int n)
 {
-    int total_swaps = 0;
-    for (int i = 0; i < n - 1; i++)
+    for (int i = 0; i < n; i++)
     {
-        int f = 1;
-
-        for (int j = 0; j < n - i - 1; j++)
+        int index = i;
+        for (int j = i + 1; j < n; j++)
         {
-            if (a[j] > a[j + 1])
-            {
-                swap(a[j], a[j + 1]);
-                f = 0;
-                total_swaps++;
-            }
+            if (a[index] > a[j])
+                index = j;
         }
-        if (f)
-            br;
+        swap(a[index], a[i]);
     }
-    cout << total_swaps << endl;
+    fo(i, n) cout << a[i] << " ";
 }
 
 void solve()
@@ -101,7 +92,7 @@ void solve()
     cin >> n;
     vi a(n);
     fo(i, n) cin >> a[i];
-    bubble_sort(a, n);
+    selection_sort(a, n);
     rr;
 }
 
