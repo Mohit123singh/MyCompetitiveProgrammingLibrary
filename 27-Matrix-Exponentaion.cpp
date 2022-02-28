@@ -143,20 +143,16 @@ void solve()
 /*
     Practice-Problems:
 
-    https://www.spoj.com/problems/MPOW/
-
-    Solution:
-    https://www.spoj.com/submit/MPOW/id=29190400
-
-
-
     https://www.hackerrank.com/challenges/fibonacci-finding-easy/problem
 
     Solution:
     https://www.hackerrank.com/challenges/fibonacci-finding-easy/submissions/code/258479461
 
 
+    https://codeforces.com/problemset/problem/185/A
 
+    Solution:
+    https://codeforces.com/contest/185/submission/147933276
     
 
 */
