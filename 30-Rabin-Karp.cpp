@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -73,66 +74,72 @@ int power(int x, int y, int m = mod)
 }
 
 const int N = 1e6;
-vi dp(N), inv(N);
-
-void generate_hash(string s)
+vi dp(N), P(N);
+void init(string s)
 {
-    dp[0] = s[0] - 'a' + 1;
-    inv[0] = 1;
+    int n = s.sz();
     int p = 31;
-    int P = 1;
+    fo(i, n)
+        P[i] = power(p, i);
 
-    for (int i = 1; i < s.sz(); i++)
+    dp[0] = s[0] - 'a' + 1;
+
+    for (int i = 1; i < n; i++)
+        dp[i] = (dp[i - 1] + (s[i] - 'a' + 1) * P[i]) % mod;
+}
+int calculate_hash_substring(string sub)
+{
+    int P = 1, p = 31, hash = 0;
+    for (auto it : sub)
     {
+        hash = (hash + (it - 'a' + 1) * P) % mod;
         P = (P * p) % mod;
-        dp[i] = (dp[i - 1] + (s[i] - 'a' + 1) * P) % mod;
-        inv[i] = power(P, mod - 2);
     }
+    rr hash;
 }
 
-int calculate_hash(int l, int r)
+int find_hash(int l, int r)
 {
     int hash = dp[r];
-    if (l > 0)
-        hash -= dp[l - 1];
-    hash = (hash * inv[l]) % mod;
+    if (l)
+        hash = (hash - dp[l - 1] + mod) % mod;
     rr hash;
 }
 
 void solve()
 {
-
-    string s;
-    cin >> s;
-    generate_hash(s);
-
-    int q;
-    cin >> q;
-    foo(i, q)
+    int n;
+    while (cin >> n)
     {
-        int l, r;
-        cin >> l >> r;
-        //hash-value of substring:
-        cout << calculate_hash(l, r) << endl;
+        string sub, s;
+        cin >> sub >> s;
+
+        init(s);
+
+        int l = 0;
+        int r = sub.sz() - 1;
+        int n = s.sz();
+
+        int hash_value = calculate_hash_substring(sub);
+        int p = 31;
+        while (r < n)
+        {
+            int res = (hash_value * P[l]) % mod;
+            if (res == find_hash(l, r))
+                cout << l << endl;
+            l++;
+            r++;
+        }
+        cout << endl;
     }
 
     rr;
 }
-
 /*
-    Practice Problems:
-
-   
-
+    Practice-Problems:
+     
     Problem:
-    https://codeforces.com/problemset/problem/271/D
-
-    Solution:
-    https://codeforces.com/contest/271/submission/148176039
-    
-
-
-
+    https://www.spoj.com/problems/NHAY/
 
 */
 
