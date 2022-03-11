@@ -79,8 +79,9 @@ void init(string s)
 {
     int n = s.sz();
     int p = 31;
-    fo(i, n)
-        P[i] = power(p, i);
+    P[0] = 1;
+    for (int i = 1; i < n; i++)
+        P[i] = (P[i - 1] * p) % mod;
 
     dp[0] = s[0] - 'a' + 1;
 
@@ -135,13 +136,6 @@ void solve()
 
     rr;
 }
-/*
-    Practice-Problems:
-     
-    Problem:
-    https://www.spoj.com/problems/NHAY/
-
-*/
 
 int32_t main()
 {
