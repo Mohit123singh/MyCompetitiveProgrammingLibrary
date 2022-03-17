@@ -131,6 +131,13 @@ void solve()
     https://www.spoj.com/submit/NAJPF/id=29263501
 
 
+    https://codeforces.com/contest/126/problem/B
+
+    Solution:
+    https://codeforces.com/contest/126/submission/149953526
+    
+
+
 */
 int32_t main()
 {
