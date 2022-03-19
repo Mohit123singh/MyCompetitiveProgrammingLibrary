@@ -1,4 +1,5 @@
 
+
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
 //using namespace __gnu_pbds;
@@ -72,85 +73,93 @@ int power(int x, int y, int m = mod)
     return res;
 }
 
+class edge
+{
+public:
+    int u, v, w;
+    edge(int a, int b, int c)
+    {
+        u = a;
+        v = b;
+        w = c;
+    }
+};
+
+vector<edge> edges;
+
 const int N = 1e6;
-vi adj[N], trAdj[N];
-vector<bool> visted(N);
-stack<int> s;
+vi par(N), s(N);
 
-void dfs(int node)
+bool comp(edge &e1, edge &e2)
 {
-    visted[node] = true;
-
-    for (auto it : adj[node])
-    {
-        if (!visted[it])
-            dfs(it);
-    }
-    s.push(node);
+    if (e1.w < e2.w)
+        rr true;
+    rr false;
 }
 
-void revdfs(int node)
+void make(int node)
 {
-    visted[node] = true;
-    cout << node << " ";
-    for (auto it : trAdj[node])
+    par[node] = node;
+    s[node] = 1;
+}
+
+int find(int node)
+{
+    if (node == par[node])
+        rr node;
+    rr par[node] = find(par[node]);
+}
+
+void UNION(int a, int b)
+{
+    a = find(a);
+    b = find(b);
+
+    if (a != b)
     {
-        if (!visted[it])
-            revdfs(it);
+        if (s[b] > s[a])
+            swap(a, b);
+        par[b] = a;
+        s[a] += s[b];
     }
 }
+
 void solve()
 {
     int n, m;
     cin >> n >> m;
     foo(i, n)
     {
-        adj[i].clear();
-        trAdj[i].clear();
-
-        visted[i] = false;
+        make(i);
     }
+
     foo(i, m)
     {
-        int x, y;
-        cin >> x >> y;
-        adj[x].pb(y);
-        trAdj[y].pb(x);
+        int u, v, w;
+        cin >> u >> v >> w;
+        edge e = edge(u, v, w);
+        edges.push_back(e);
     }
-    foo(i, n)
+    sort(edges.begin(), edges.end(), comp);
+    int sum = 0;
+    vector<pii> ans;
+    for (auto it : edges)
     {
-        if (!visted[i])
-            dfs(i);
+        int a = it.u;
+        int b = it.v;
+        int weight = it.w;
+
+        if (find(a) != find(b))
+        {
+            UNION(a, b);
+            ans.pb({a, b});
+            sum += weight;
+        }
     }
-
-    foo(i, n) visted[i] = false;
-
-    while (!s.empty())
-    {
-        int node = s.top();
-        s.pop();
-
-        if (visted[node])
-            ct;
-
-        cout << "SCC :" << endl;
-
-        revdfs(node);
-        cout << endl;
-    }
-
-    //cout << "Hello" << endl;
-    rr;
+    cout << sum << endl;
+    for (auto it : ans)
+        cout << it.ff << " " << it.ss << endl;
 }
-
-/*
-    Practice:
-    https://codeforces.com/problemset/problem/427/C
-    
-    Solution:
-    https://codeforces.com/contest/427/submission/150009635
-    
-*/
 
 int32_t main()
 {
