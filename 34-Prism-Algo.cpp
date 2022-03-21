@@ -107,6 +107,9 @@ void solve()
         int node = q.top().ss;
         q.pop();
 
+        if (mst[node])
+            ct;
+
         mst[node] = true;
 
         for (auto it : adj[node])
@@ -131,6 +134,18 @@ void solve()
 
     rr;
 }
+
+/*
+    Practice-Problems:
+
+    https://cses.fi/problemset/task/1675
+
+    Solution:
+    https://cses.fi/paste/7218d4c7a194b44f388397/
+
+
+
+*/
 
 int32_t main()
 {
