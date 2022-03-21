@@ -161,6 +161,16 @@ void solve()
         cout << it.ff << " " << it.ss << endl;
 }
 
+/*
+    Practice-Problems:
+
+    https://cses.fi/problemset/task/1675
+
+    https://cses.fi/paste/56462b83e45f875b38827f/
+
+    
+*/
+
 int32_t main()
 {
     ios_base::sync_with_stdio(0);
