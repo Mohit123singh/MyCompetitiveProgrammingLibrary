@@ -167,6 +167,7 @@ void solve()
     https://cses.fi/problemset/task/1675
 
     Solution:
+    
     https://cses.fi/paste/56462b83e45f875b38827f/
 
 
