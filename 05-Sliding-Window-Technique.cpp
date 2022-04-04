@@ -1,6 +1,6 @@
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
-//using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 using namespace std;
 
 #define ff first
@@ -94,20 +94,15 @@ void solve()
     rr;
 }
 
-/*
-    Practice-Problems:
+// Problem1 : https://codeforces.com/problemset/problem/363/B
+// Solution : https://codeforces.com/contest/363/submission/146230482
 
-    https://codeforces.com/problemset/problem/363/B
+// Problem2 : https://codeforces.com/problemset/problem/279/B
+// Solution : https://codeforces.com/contest/279/submission/146233346
 
-    https://codeforces.com/problemset/problem/279/B
+// Problem3 : https://codeforces.com/contest/1341/problem/B
+// Solution : https://codeforces.com/contest/1341/submission/146238361
 
-    https://codeforces.com/contest/1341/problem/B
-
-    
-
-
-
-*/
 int32_t main()
 {
 
@@ -115,7 +110,7 @@ int32_t main()
     cin.tie(0);
     cout.tie(0);
 
-    //test(t)
+    // test(t)
     solve();
 
     return 0;
