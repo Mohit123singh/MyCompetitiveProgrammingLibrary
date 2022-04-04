@@ -107,6 +107,7 @@ void solve()
         int node = q.top().ss;
         q.pop();
 
+        //cycle:
         if (mst[node])
             ct;
 
