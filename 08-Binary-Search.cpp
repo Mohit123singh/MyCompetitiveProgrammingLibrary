@@ -1,78 +1,10 @@
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
-//using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 using namespace std;
 
-#define ff first
-#define ss second
-#define ll long long int
-#define int long long int
-#define type int
-#define type1 int
-#define type2 int
-#define pb push_back
-#define mp make_pair
-#define pii pair<type, type>
-#define vi vector<type>
-#define fo(i, n) for (type i = 0; i < n; i++)
-#define foo(i, n) for (type i = 1; i <= n; i++)
-#define mi(x) map<type1, type2> x
-#define mii(x) unordered_map<type1, type2> x
-#define maxheap priority_queue<type>
-#define minheap priority_queue<type, vi, greater<type>>
-#define setbits(x) __builtin_popcountll(x)
-#define zrobits(x) __builtin_ctzll(x)
-#define mod 1000000007
-#define PI 3.14159265358979323846
-#define inf 1e18
-#define ps(x, y) fixed << setprecision(y) << x
-#define mk(arr, n, typee) typee *arr = new typee[n];
-#define test(x) \
-    int x;      \
-    cin >> x;   \
-    while (x--)
-//#define mt19937             rng(chrono::steady_clock::now().time_since_epoch().count());
-#define endl "\n"
-#define sz() size()
-#define ct continue
-#define br break
-#define rr return
-#define I(x) x.begin(), x.end()
-#define G(x) x.rbegin(), x.rend()
-#define acc accumulate
-
-struct custom_hash
-{
-    static uint64_t splitmix64(uint64_t x)
-    {
-        x += 0x9e3779b97f4a7c15;
-        x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
-        x = (x ^ (x >> 27)) * 0x94d049bb133111eb;
-        return x ^ (x >> 31);
-    }
-
-    size_t operator()(uint64_t x) const
-    {
-        static const uint64_t FIXED_RANDOM = chrono::steady_clock::now().time_since_epoch().count();
-        return splitmix64(x + FIXED_RANDOM);
-    }
-};
-
-int power(int x, int y, int m = mod)
-{
-    int res = 1;
-    while (y > 0)
-    {
-        if (y & 1)
-            res = (res * x) % m;
-        x = (x * x) % m;
-        y = y >> 1;
-    }
-    return res;
-}
-
-int find_lower_bound(vi &a, int n, int x)
+int find_lower_bound(vector<int> a, int n, int x)
 {
     int l = 0;
     int h = n - 1;
@@ -86,13 +18,13 @@ int find_lower_bound(vi &a, int n, int x)
             h = mid;
     }
     if (a[l] >= x)
-        rr l;
+        return l;
     else if (a[h] >= x)
-        rr h;
-    rr - 1;
+        return h;
+    return -1;
 }
 
-int find_upper_bound(vi &a, int n, int x)
+int find_upper_bound(vector<int> a, int n, int x)
 {
     int l = 0;
     int h = n - 1;
@@ -106,72 +38,17 @@ int find_upper_bound(vi &a, int n, int x)
             h = mid;
     }
     if (a[l] > x)
-        rr l;
+        return l;
     else if (a[h] > x)
-        rr h;
-    rr - 1;
+        return h;
+    return -1;
 }
 
-void solve()
-{
-    int n;
-    cin >> n;
-    vi a(n);
-    fo(i, n) cin >> a[i];
-    sort(I(a));
-    int q;
-    cin >> q;
-    foo(i, q)
-    {
-        int t;
-        cin >> t;
-        //lower_bound:
-        if (t == 1)
-        {
-            int x;
-            cin >> x;
+// Problem 1 : https://codeforces.com/contest/75/problem/C
+// Solution : https://codeforces.com/contest/75/submission/152560843
 
-            int index = find_lower_bound(a, n, x);
+// Problem 2: https://codeforces.com/contest/778/problem/A
+// Solution : https://codeforces.com/contest/778/submission/152567755
 
-            cout << index << endl;
-        }
-        //upper_bound:
-        else
-        {
-            int x;
-            cin >> x;
-            int index = find_upper_bound(a, n, x);
-
-            cout << index << endl;
-        }
-    }
-
-    rr;
-}
-
-/*
-    Practice-Problems:
-
-    https://www.spoj.com/problems/AGGRCOW/
-
-    https://www.spoj.com/problems/NOTATRI/
-
-    https://codeforces.com/problemset/problem/448/D/
-
-    
-
-    
-
-*/
-
-int32_t main()
-{
-    ios_base::sync_with_stdio(0);
-    cin.tie(0);
-    cout.tie(0);
-
-    //test(t)
-    solve();
-
-    return 0;
-}
+// Problem 3: https://codeforces.com/contest/1370/problem/D
+// Solution : https://codeforces.com/contest/1370/submission/152586591
