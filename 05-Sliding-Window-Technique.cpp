@@ -4,7 +4,7 @@ using namespace std;
 
 // Sliding-Window-Technique::
 
-// Maximum-Sum in Window(K-size) in an Array
+// Maximum-Sum of k-size-window  in an Array
 
 int find_maximum_sum(vector<int> a, int k, int n)
 {
@@ -19,6 +19,7 @@ int find_maximum_sum(vector<int> a, int k, int n)
     int max_value = sum;
 
     // find-maximum-sum in every window-size of k :
+    // update the max_value;
 
     for (int i = k; i < n; i++)
     {
