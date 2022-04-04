@@ -1,7 +1,7 @@
 
 #include <bits/stdc++.h>
 #include <ext/pb_ds/assoc_container.hpp>
-//using namespace __gnu_pbds;
+// using namespace __gnu_pbds;
 using namespace std;
 
 #define ff first
@@ -62,52 +62,52 @@ struct custom_hash
     }
 };
 
-//Binary search
+// Binary search
 
 void binary_search_stl_function()
 {
     int a[] = {1, 4, 5, 8, 9};
 
-    //if x exits in array or not.....
+    // if x exits in array or not.....
 
-    bool res = binary_search(a, a + n, 3); //false;
+    bool res = binary_search(a, a + n, 3); // false;
 
-    bool res = binary_search(a, a + n, 4); //true;
+    bool res = binary_search(a, a + n, 4); // true;
 
-    //lower_bound
+    // lower_bound
 
-    //If element exits in array then it points to that element....
-    //Otherwise it points to next greater element........
+    // If element exits in array then it points to that element....
+    // Otherwise it points to next greater element........
 
-    //syntax
+    // syntax
     int a[] = {1, 4, 5, 6, 9, 9};
 
-    int index = lower_bound(a, a + n, 4) - a;  //1
-    int index = lower_bound(a, a + n, 7) - a;  //4
-    int index = lower_bound(a, a + n, 10) - a; //it always point to end..
+    int index = lower_bound(a, a + n, 4) - a;  // 1
+    int index = lower_bound(a, a + n, 7) - a;  // 4
+    int index = lower_bound(a, a + n, 10) - a; // it always point to end..
 
-    //vector...
+    // vector...
 
     int index = lower_bound(v.begin(), v.end(), 4) - v.begin();
 
-    //Upper-bound........
+    // Upper-bound........
 
-    //it always point to next greater element...........
+    // it always point to next greater element...........
 
-    //syntax
+    // syntax
     int a[] = {1, 4, 5, 6, 9, 9};
 
-    int index = upper_bound(a, a + n, 4) - a;  //2
-    int index = upper_bound(a, a + n, 7) - a;  //4
-    int index = upper_bound(a, a + n, 10) - a; //it always point to end.......
+    int index = upper_bound(a, a + n, 4) - a;  // 2
+    int index = upper_bound(a, a + n, 7) - a;  // 4
+    int index = upper_bound(a, a + n, 10) - a; // it always point to end.......
 
-    //vector
+    // vector
     int index = upper_bound(v.begin(), v.end(), 4) - v.begin();
 
-    //Exercise
+    // Exercise
 
-    //find the first-occurrence of x in a sorted array...
-    //if it does not exist,print -1............
+    // find the first-occurrence of x in a sorted array...
+    // if it does not exist,print -1............
 
     int a[] = {1, 4, 4, 4, 4, 9, 9, 10, 11};
     int ind = lower_bound(a, a + n, x) - a;
@@ -116,8 +116,8 @@ void binary_search_stl_function()
     else
         cout << -1;
 
-    //find the last-occurrence of x in a sorted array...
-    //if it does not exist,print -1............
+    // find the last-occurrence of x in a sorted array...
+    // if it does not exist,print -1............
 
     int a[] = {1, 4, 4, 4, 4, 9, 9, 10, 11};
     int ind = upper_bound(a, a + n, x) - a;
@@ -127,8 +127,8 @@ void binary_search_stl_function()
     else
         cout << "-1";
 
-    //Find the largest number smaller than x in a sorted array......
-    //if it does not exist,print -1............
+    // Find the largest number smaller than x in a sorted array......
+    // if it does not exist,print -1............
 
     int a[] = {1, 4, 4, 4, 4, 9, 9, 10, 11};
     int ind = lower_bound(a, a + n, x) - a;
@@ -138,8 +138,8 @@ void binary_search_stl_function()
     else
         cout << "-1";
 
-    //Find the smallest number greater than x in a sorted array......
-    //if it does not exist,print -1............
+    // Find the smallest number greater than x in a sorted array......
+    // if it does not exist,print -1............
 
     int a[] = {1, 4, 4, 4, 4, 9, 9, 10, 11};
     int ind = upper_bound(a, a + n, x) - a;
@@ -149,7 +149,7 @@ void binary_search_stl_function()
         cout << a[ind];
 }
 
-//pairs
+// pairs
 
 void Explain_pair()
 {
@@ -166,7 +166,7 @@ void Explain_pair()
     cout << arr[1].second << endl;
 }
 
-//vectors
+// vectors
 
 void Explain_vector()
 {
@@ -174,7 +174,7 @@ void Explain_vector()
 
     v.push_back(1); // {1}
 
-    //emplace_back and push_back both are same
+    // emplace_back and push_back both are same
 
     v.emplace_back(2); //{1,2}
 
@@ -194,47 +194,47 @@ void Explain_vector()
 
     vector<int> v(5); // {0,0,0,0,0}
 
-    //vector of size 5 and  is initialized with  100;
+    // vector of size 5 and  is initialized with  100;
 
     vector<int> v(5, 100); //{100,100,100,100,100};
 
-    //it copy the elements of vector v into another vector v1
+    // it copy the elements of vector v into another vector v1
 
     vector<int> v1(v);
 
-    //Take the vector to be {10,20,30,40}
+    // Take the vector to be {10,20,30,40}
 
-    //iterator
+    // iterator
 
-    //v.begin():->  Returns an iterator pointing to the first element in the vector
+    // v.begin():->  Returns an iterator pointing to the first element in the vector
 
     vector<int>::iterator it = v.begin(); // it points to element-10
 
     it++;
 
-    cout << *(it) << " "; //prints 20;
+    cout << *(it) << " "; // prints 20;
 
     it = it + 2; // it points to element-30
 
-    cout << *(it) << " "; //prints 30;
+    cout << *(it) << " "; // prints 30;
 
-    //v.end():->    Returns an iterator pointing to the theoretical element that follows the last element in the vector
+    // v.end():->    Returns an iterator pointing to the theoretical element that follows the last element in the vector
 
     vector<int>::iterator it = v.end(); // it points to memory after 40 which contains NULL.
 
-    //v.rend():->    Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector (considered as reverse end).
+    // v.rend():->    Returns a reverse iterator pointing to the theoretical element preceding the first element in the vector (considered as reverse end).
 
     vector<int>::iterator it = v.rend(); // it points before the element-10.
 
-    //v.rbegin():->      Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element.
+    // v.rbegin():->      Returns a reverse iterator pointing to the last element in the vector (reverse beginning). It moves from last to first element.
 
     vector<int>::iterator it = v.rbegin(); // it points to 40 exactly.
 
-    vector<int>::iterator it = v.cbegin(); //Returns a constant iterator pointing to the first element in the vector.
+    vector<int>::iterator it = v.cbegin(); // Returns a constant iterator pointing to the first element in the vector.
 
-    vector<int>::iterator it = v.cend(); //Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.
+    vector<int>::iterator it = v.cend(); // Returns a constant iterator pointing to the theoretical element that follows the last element in the vector.
 
-    //Accessing the elements into the array.
+    // Accessing the elements into the array.
 
     cout << v[0] << " " << v.at(0) << " ";
 
@@ -242,7 +242,7 @@ void Explain_vector()
 
     cout << v.front() << " "; // Returns a reference(value) to the first element in the vector.
 
-    //ways to print the vector
+    // ways to print the vector
 
     for (vector<int>::iterator it = v.begin(); it != v.end(); it++)
     {
@@ -256,14 +256,14 @@ void Explain_vector()
         cout << *it << " ";
     }
 
-    for (auto it : v) //for-each loop
+    for (auto it : v) // for-each loop
     {
         cout << it << " ";
     }
 
-    //Erase-function
+    // Erase-function
 
-    //Take the vector to be {10,20,30,40}
+    // Take the vector to be {10,20,30,40}
 
     // removes the first element
 
@@ -271,7 +271,7 @@ void Explain_vector()
 
     // {10,20,12,23,35}
 
-    //To erase-range.
+    // To erase-range.
 
     v.erase(v.begin() + 2, v.begin() + 4); // // {10,20,35} [start, end) (does not include end value)
 
@@ -301,9 +301,9 @@ void Explain_vector()
 
     v.clear(); // erases the entire vector
 
-    cout << v.empty(); //v.empty() gives boolean result.
-                       //True: vector is empty.
-                       //False: vector is not empty.
+    cout << v.empty(); // v.empty() gives boolean result.
+                       // True: vector is empty.
+                       // False: vector is not empty.
 }
 void explainList()
 {
@@ -371,13 +371,13 @@ void explainStack()
 
     cout << st.size(); // 4
 
-    cout << st.empty(); //st.empty() gives boolean result.
-                        //True: vector is empty.
-                        //False: vector is not empty.
+    cout << st.empty(); // st.empty() gives boolean result.
+                        // True: vector is empty.
+                        // False: vector is not empty.
 
     stack<int> st1, st2;
 
-    st1.swap(st2); //swap two stacks.
+    st1.swap(st2); // swap two stacks.
 }
 
 void explainQueue()
@@ -447,9 +447,9 @@ void explainSet()
 
     set<int> st;
 
-    //duplicate-values are not allowed.
+    // duplicate-values are not allowed.
 
-    //insertion takes place acc. sorted ascending-order.
+    // insertion takes place acc. sorted ascending-order.
 
     st.insert(1); // {1}
 
@@ -470,9 +470,9 @@ void explainSet()
 
     // {1, 2, 3, 4, 5}
 
-    //find:Returns an iterator to the element g in the set if found, else returns the iterator to end.
+    // find:Returns an iterator to the element g in the set if found, else returns the iterator to end.
 
-    auto it = st.find(3); //to know whether the element exits or not.
+    auto it = st.find(3); // to know whether the element exits or not.
 
     // simply s.find(3)!=s.end(). then exists otherwise it will not exist in the set.
 
@@ -499,18 +499,18 @@ void explainSet()
     // lower_bound() and upper_bound() function works in the same way
     // as in vector it does.
 
-    //lower_bound():->
+    // lower_bound():->
 
-    //The function returns an iterator pointing to the element in the container which is equivalent to k passed in the parameter.
-    //In case k is not present in the set container, the function returns an iterator pointing to the immediate next element
-    //which is just greater than k. If the key passed in the parameter exceeds the maximum value in the container, then the
-    //iterator returned is equivalent to s.end() (A special iterator points beyond the last element).
+    // The function returns an iterator pointing to the element in the container which is equivalent to k passed in the parameter.
+    // In case k is not present in the set container, the function returns an iterator pointing to the immediate next element
+    // which is just greater than k. If the key passed in the parameter exceeds the maximum value in the container, then the
+    // iterator returned is equivalent to s.end() (A special iterator points beyond the last element).
 
-    //upper_bound():->
+    // upper_bound():->
 
-    //The function returns an iterator pointing to the immediate next element which is just greater than k.
-    //If the key passed in the parameter exceeds the maximum key in the container, then the iterator points to std::end()
-    // which points to the element next to the last element of the set.
+    // The function returns an iterator pointing to the immediate next element which is just greater than k.
+    // If the key passed in the parameter exceeds the maximum key in the container, then the iterator points to std::end()
+    //  which points to the element next to the last element of the set.
 
     // This is the syntax
 
@@ -560,7 +560,7 @@ void explainMap()
 
     // {key, value}
 
-    //key is always unique.
+    // key is always unique.
 
     map<int, int> mpp;
 
@@ -579,7 +579,7 @@ void explainMap()
 
     mpp.insert({2, 4});
 
-    //keys always store in sorted order.
+    // keys always store in sorted order.
 
     {
         {1, 2} {2, 4} {
@@ -617,8 +617,8 @@ void explainMap()
 void explainMultimap()
 {
 
-    //Multimap is similar to map with an addition that multiple elements can have same keys.
-    //Also, it is NOT required that the key value and mapped value pair has to be unique in this case.
+    // Multimap is similar to map with an addition that multiple elements can have same keys.
+    // Also, it is NOT required that the key value and mapped value pair has to be unique in this case.
 
     // everything same as map, only it can store multiple keys
 
@@ -632,7 +632,7 @@ void explainMultimap()
     mp.insert(pair<int, int>(1, 3));
 }
 
-//map,multimap takes logrithm time.
+// map,multimap takes logrithm time.
 void explainUnorderedMap()
 {
 
@@ -678,7 +678,7 @@ void explainExtra()
 
     long long num = 165786578687;
 
-    int cnt = __builtin_popcountll(num); //ll works for long long.
+    int cnt = __builtin_popcountll(num); // ll works for long long.
 
     string s = "123";
 
