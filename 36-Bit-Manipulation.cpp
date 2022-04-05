@@ -9,5 +9,5 @@
 // Problem 3 : https://codeforces.com/problemset/problem/912/B
 // Solution  : https://codeforces.com/contest/912/submission/152762415
 
-// Problem 4 : https://codeforces.com/problemset/problem/1097/B
+// Problem 4 : https://codeforces.com/problemset/problem/1097/B   (Power-Set)
 // Solution  : https://codeforces.com/contest/1097/submission/152765731
