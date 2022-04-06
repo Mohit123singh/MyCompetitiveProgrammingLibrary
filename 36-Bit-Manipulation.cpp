@@ -11,3 +11,6 @@
 
 // Problem 4 : https://codeforces.com/problemset/problem/1097/B   (Power-Set)
 // Solution  : https://codeforces.com/contest/1097/submission/152765731
+
+// Problem 5 : https://codeforces.com/problemset/problem/1494/B
+// Solution  : https://codeforces.com/contest/1494/submission/152834156
