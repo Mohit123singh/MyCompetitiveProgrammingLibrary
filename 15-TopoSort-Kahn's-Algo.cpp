@@ -32,3 +32,6 @@ bool kahnAlgo(int n)
         return true;
     return false;
 }
+
+// Problem 1 : https://www.spoj.com/problems/TOPOSORT/
+// Solution  : https://ideone.com/0TtCQC
