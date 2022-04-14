@@ -19,23 +19,6 @@ vector<edge> e;
 int n, m, last_node;
 int dist[N], par[N];
 
-class edge
-{
-public:
-    int u, v, w;
-    edge(int u, int v, int w)
-    {
-        this->u = u;
-        this->v = v;
-        this->w = w;
-    }
-};
-
-const int N = 1e6;
-vector<edge> e;
-int n, m, last_node;
-int dist[N], par[N];
-
 bool is_negative_cycle(int src)
 {
     bool f = false;
