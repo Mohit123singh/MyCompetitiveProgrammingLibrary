@@ -34,8 +34,14 @@ void dfs1(int node)
 
 // finding the SCC in directed-Graph:
 
-void find_SCC()
+void find_SCC(int n)
 {
+    for (int i = 1; i <= n; i++)
+    {
+        if (!visted[i])
+            dfs(i);
+    }
+
     memset(visted, false, sizeof(visted));
 
     while (!s.empty())
@@ -46,10 +52,9 @@ void find_SCC()
             continue;
         cout << "SCC : " << endl;
         dfs1(node);
+        cout << endl;
     }
 }
 
 // Problem 1 : https://codeforces.com/contest/427/problem/C
 // Solution  : https://codeforces.com/contest/427/submission/153624061
-
-// Problem 2 :
