@@ -21,9 +21,7 @@ int prism(int src, int n)
     {
         int u = q.top().second;
         q.pop();
-        // cycle
-        if (mst[u])
-            continue;
+
         mst[u] = true;
 
         for (auto it : adj[u])
