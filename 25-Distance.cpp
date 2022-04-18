@@ -38,22 +38,6 @@ void init(int n)
     }
 }
 
-// kth-Ancestor
-int kthAncestor(int node, int k)
-{
-    for (int i = 24; i >= 0; i--)
-    {
-        int d = ((int)1 << i);
-
-        if (d <= k)
-        {
-            node = dp[node][i];
-            k -= d;
-        }
-    }
-    return node;
-}
-
 int find_LCA(int a, int b)
 {
     if (level[a] > level[b])
