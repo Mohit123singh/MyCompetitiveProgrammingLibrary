@@ -9,7 +9,7 @@ int low[N], in[N];
 bool visted[N];
 set<int> articulation_point;
 
-int dfs(int node, int par = -1)
+void dfs(int node, int par = -1)
 {
     visted[node] = true;
     low[node] = in[node] = timer++;
@@ -33,8 +33,6 @@ int dfs(int node, int par = -1)
     }
     if (par == -1 && children > 1)
         articulation_point.insert(node);
-
-    return articulation_point.size();
 }
 
 // Problem 1 : https://www.spoj.com/problems/SUBMERGE/
