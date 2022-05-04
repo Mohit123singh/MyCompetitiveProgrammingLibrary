@@ -52,10 +52,15 @@ int lower_bound_prefix_sum(int v)
     return curr + 1;
 }
 
+// O(1) - > Prefix-Sum::
+
+int pre_sum(int l, int r)
+{
+    return find_sum(r) - find_sum(l - 1);
+}
+
 // Problem1 : https://codeforces.com/contest/1354/problem/D
 // Solution : https://codeforces.com/contest/1354/submission/155739640
 
 // Problem2 : https://www.spoj.com/problems/INVCNT/
 // Solution : https://ideone.com/qGoHaZ
-
-// Problem3:
