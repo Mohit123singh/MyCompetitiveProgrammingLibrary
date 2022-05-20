@@ -64,3 +64,6 @@ int pre_sum(int l, int r)
 
 // Problem2 : https://www.spoj.com/problems/INVCNT/
 // Solution : https://ideone.com/qGoHaZ
+
+// Problem3 : https://codeforces.com/contest/1679/problem/C
+// Solution : https://codeforces.com/contest/1679/submission/157471188
