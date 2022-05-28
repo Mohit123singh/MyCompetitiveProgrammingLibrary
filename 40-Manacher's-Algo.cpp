@@ -56,3 +56,6 @@ string apply_manacher(string updated_string,string orginal_string)
 // Problem2 : https://www.spoj.com/problems/NUMOFPAL/
 // Solution : https://ideone.com/WLtbtn
 
+// Problem3 : https://www.spoj.com/problems/MSUBSTR/
+// Solution : https://ideone.com/WOtNRh
+
