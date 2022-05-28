@@ -2,7 +2,7 @@
 using namespace std;
 
 
-string convert_to_update(string s)
+string to_update(string s)
 {
 	int n=s.size();
 	string res;
