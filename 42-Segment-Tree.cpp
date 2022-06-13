@@ -75,6 +75,7 @@ public:
 				lazy[2 * index + 1] += lazy[index];
 				lazy[2 * index + 2] += lazy[index];
 			}
+			lazy[index]=0;
 		}
 
 		if (left > h || right < l || l > h)
@@ -88,6 +89,7 @@ public:
 				lazy[2 * index + 1] += val;
 				lazy[2 * index + 2] += val;
 			}
+			return ;
 		}
 		int mid = (l + h) / 2;
 		rangeUpdate(2 * index + 1, left, right, val, l, mid);
@@ -107,6 +109,7 @@ public:
 				lazy[2 * index + 1] += lazy[index];
 				lazy[2 * index + 2] += lazy[index];
 			}
+			lazy[index]=0;
 		}
 
 		if (l > right || h < left || l > h)
@@ -126,3 +129,6 @@ public:
 
 // Problem 1 : https://codeforces.com/contest/339/problem/D
 // Solution : https://codeforces.com/contest/339/submission/160376342
+
+// Problem2 : https://www.spoj.com/problems/HORRIBLE/
+// Solution : https://ideone.com/EZNY3I
